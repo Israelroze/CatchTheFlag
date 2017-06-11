@@ -13,24 +13,22 @@
 
 class GameManager {
 private:
-	//AbstractPlayer  * PlayerA = new AlgoPlayer1;// should be null ptr// todo: alorithmRegistration
-	//AbstractPlayer  * PlayerB = new AlgoPlayer1; // shuld be null ptr// todo: alorithmRegistration
-	bool IsReversed; // probably gonna be cancelled
-	bool IsRecord = false;// also, probably gonna be cancelled
-	bool IsStart = false;// also, probably gonna be cancelled
+	Player  * PlayerA;
+	Player  * PlayerB;
+	bool IsReversed;
+	bool IsRecord = false;
+	bool IsStart = false;
 	GameDir * allFiles=nullptr;
-	int ScoreA = 0;
-	int ScoreB = 0;
-	GameMode mode = GameMode::Regular; // also, probably gonna be cancelled
+	GameMode mode = GameMode::Regular;
 	GameOption TheOption;
-	//void GetNames(); // also, probably gonna be cancelled
-	//void ReverseGame();// also, probably gonna be cancelled
+	void GetNames();
+	void ReverseGame();
 	void clearScore();
 	void ManageScore(IsGameStop  & isGameStoped, Side & Winner);
 	void PrintEndingMessage(string violations);
-	//void RunBoardAndMoveFiles();
-	//Side RunBoardFileAndKeyMove(IsGameStop  & isGameStoped);
-	Side RunRandomBoard(IsGameStop  & isGameStoped);
+	void RunBoardAndMoveFiles();
+	Side RunBoardFileAndKeyMove(IsGameStop  & isGameStoped);
+	Side RunRandomBoardAndKeyMove(IsGameStop  & isGameStoped);
 	void PrintQuietModeMessage(int cycle, int num_of_turns, Side Winner) 
 	{
 		cout << "Game cycle : " << cycle << endl;
@@ -44,6 +42,6 @@ public:
 	GameManager(int argc, char *argv[]);
 	void RunGamev2();
 	~GameManager();
-	//void Menu();
+	void Menu();
 };
 
