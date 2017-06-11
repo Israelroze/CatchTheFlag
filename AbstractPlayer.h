@@ -1,4 +1,9 @@
 #pragma once
+#include "BoardData.h"
+#include "GameMove.h"
+#include <string>
+
+using namespace std;
 
 
 class AbstractPlayer {
