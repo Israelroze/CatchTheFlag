@@ -18,6 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AbstractPlayer.h" />
+    <ClInclude Include="AlgoPlayer.h" />
+    <ClInclude Include="AlgorithmRegistration.h" />
+    <ClInclude Include="Algo_308064161.h" />
+    <ClInclude Include="Board.h" />
+    <ClInclude Include="BoardData.h" />
+    <ClInclude Include="Cell.h" />
+    <ClInclude Include="CharBoard.h" />
+    <ClInclude Include="Enums.h" />
+    <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameMove.h" />
+    <ClInclude Include="GameOption.h" />
+    <ClInclude Include="Soldier.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Algo_308064161.cpp" />
+    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameOption.cpp" />
+    <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{450DC902-7032-4A78-983E-96560CC841BD}</ProjectGuid>
@@ -138,15 +165,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\AbstractPlayer.h" />
-    <ClInclude Include="..\AlgoPlayer.h" />
-    <ClInclude Include="..\AlgorithmRegistration.h" />
-    <ClInclude Include="..\BoardData.h" />
-    <ClInclude Include="..\Enums.h" />
-    <ClInclude Include="..\GameManager.h" />
-    <ClInclude Include="GameMove.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

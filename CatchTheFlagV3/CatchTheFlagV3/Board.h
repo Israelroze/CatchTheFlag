@@ -25,20 +25,34 @@ private:
 	pair<int, int> FlgAPos = { 10, 0 };
 	pair<int, int> FlgBPos = { 1, 12 };
 
-private:
 
 
+	void SetSpecialCells();
+	void RandomSoldiers();
+	void randomize();
+
+
+	void readfile(string file);
 
 public:
 	Board(const int& turn) : BoardData(), turnFromGame(turn)
 	{
-		
+		randomize();
 	}
 
-	
+	Board(string file_name, const int& turn): BoardData(), turnFromGame(turn)
+	{
+		readfile(file_name);
+	}
 
-	void SetSpecialCells();
-	void RandomSoldiers();
+	Side ValidateBoard();
+	virtual void updateBoard()
+	virtual void draw() = 0;
+	virtual char charAt(int x, int y) const override {
+		//TO DO : TO implement
+		return '#';
+	}
+	
 	bool IsDeadArmy(Side const _side);
 	Side IsFlagCatched();
 	void PlayerMove(Soldier *& sol, Direction const dir);
@@ -51,11 +65,10 @@ public:
 	{
 		return sol_num > 2 ? sol_num + 4 : sol_num + 1;
 	}
-	virtual char charAt(int x, int y) const override {
-	//TO DO : TO implement
-		return '#';
-	}
+
 	void MovePlayer(Side TheSide, const GameMove& TheMove);
 	bool CheckIfValidMove(Side TheSide, const GameMove& TheMove);
 	
-};
+};	
+
+friend GameEngine;

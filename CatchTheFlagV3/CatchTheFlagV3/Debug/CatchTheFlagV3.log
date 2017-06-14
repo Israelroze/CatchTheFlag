@@ -1,0 +1,34 @@
+﻿  Utils.cpp
+  Soldier.cpp
+  GameOption.cpp
+  GameManager.cpp
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\gamemanager.h(3): fatal error C1083: Cannot open include file: 'Player.h': No such file or directory
+  GameEngine.cpp
+  Cell.cpp
+  Board.cpp
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\board.h(50): error C2144: syntax error: 'void' should be preceded by ';'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\board.h(74): error C2255: 'friend': not allowed outside of a class definition
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\board.h(74): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\board.cpp(8): error C2600: 'Board::~Board': cannot define a compiler-generated special member function (must be declared in the class first)
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\board.cpp(172): error C3861: 'UpdateBoardCounters': identifier not found
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\board.cpp(177): error C3861: 'ValidateBoardCounters': identifier not found
+  Algo_308064161.cpp
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(4): error C2653: 'Algo_308064161': is not a class or namespace name
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(8): error C2653: 'Algo_308064161': is not a class or namespace name
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(14): error C2653: 'AlgoPlayer1': is not a class or namespace name
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(15): error C2270: 'getName': modifiers not allowed on nonmember functions
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(21): error C2146: syntax error: missing ';' before identifier 'algo_1'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(22): error C2143: syntax error: missing ';' before '{'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(22): error C2143: syntax error: missing ')' before ';'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(22): error C2447: '{': missing function header (old-style formal list?)
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(22): error C2059: syntax error: ')'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(23): error C2086: 'int Registration': redefinition
+  u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(21): note: see declaration of 'Registration'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(23): error C2146: syntax error: missing ';' before identifier 'algo_2'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(24): error C2143: syntax error: missing ';' before '{'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(24): error C2143: syntax error: missing ')' before ';'
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(24): error C2447: '{': missing function header (old-style formal list?)
+u:\study\c++\catchtheflagv3\catchtheflagv3\catchtheflagv3\algo_308064161.cpp(24): error C2059: syntax error: ')'
+  Generating Code...

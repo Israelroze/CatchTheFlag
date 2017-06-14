@@ -1,5 +1,8 @@
 #include "Board.h"
 #include <math.h>
+#include <iostream>
+#include <fstream>
+#include <ostream>
 
 Board::~Board()
 {
@@ -17,6 +20,9 @@ Board::~Board()
 	}
 	//clearScreen();
 }
+
+
+//////////////////////////////////////////////Random Board Type////////////////////////////////////////////////////////
 void Board::SetSpecialCells()
 {
 	//initialize the FR cells
@@ -52,7 +58,6 @@ void Board::SetSpecialCells()
 	if (!TheOption.GetQuiet()) cells[1][12]->Draw();
 
 }
-
 void Board::RandomSoldiers()
 {
 
@@ -85,6 +90,101 @@ void Board::RandomSoldiers()
 		} while (isFinised != true);
 	}
 }
+void Board::randomize()
+{
+	SetSpecialCells();
+	RandomSoldiers();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////File Board Type//////////////////////////////////////////////////////////
+
+void Board::readfile(string file)
+{
+	ifstream fstream(file);
+	string Violations;
+	if (fstream.is_open())
+	{
+		string line;
+		int row = 0;
+		while (getline(fstream, line) && row<13)
+		{
+			for (int col = 0; col<13; col++)
+			{
+				if (line[col] != ' ')
+				{
+					switch (line[col])
+					{
+						case '1':
+							cells[row][col] = new Cell(row, col, Type::S1);
+							soldiers[0] = new Soldier(1, Side::SideA, false, false);
+							soldiers[0]->SetSoldierCell(cells[row][col]);
+							cells[row][col]->SetSoldier(soldiers[0]);
+						break;
+						case '2':
+							cells[row][col] = new Cell(row, col, Type::S2);
+							soldiers[1] = new Soldier(2, Side::SideA, false, false);
+							soldiers[1]->SetSoldierCell(cells[row][col]);
+							cells[row][col]->SetSoldier(soldiers[1]);
+						break;
+						case '3':
+							cells[row][col] = new Cell(row, col, Type::S3);
+							soldiers[2] = new Soldier(3, Side::SideA, false, false);
+							soldiers[2]->SetSoldierCell(cells[row][col]);
+							cells[row][col]->SetSoldier(soldiers[2]); 
+						break;
+						case '7':
+							cells[row][col] = new Cell(row, col, Type::S7);
+							soldiers[3] = new Soldier(7, Side::SideB, false, false);
+							soldiers[3]->SetSoldierCell(cells[row][col]);
+							cells[row][col]->SetSoldier(soldiers[3]);
+						break;
+						case '8':
+							cells[row][col] = new Cell(row, col, Type::S8);
+							soldiers[4] = new Soldier(8, Side::SideB, false, false);
+							soldiers[4]->SetSoldierCell(cells[row][col]);
+							cells[row][col]->SetSoldier(soldiers[4]);
+						break;
+						case '9':
+							cells[row][col] = new Cell(row, col, Type::S9);
+							soldiers[5] = new Soldier(9, Side::SideB, false, false);
+							soldiers[5]->SetSoldierCell(cells[row][col]);
+							cells[row][col]->SetSoldier(soldiers[5]);
+						break;
+						case 'B':
+							cells[row][col] = new Cell(row, col, Type::FlgB);
+							FlgBPos.first = row;
+							FlgBPos.second = col;
+						break;
+						case 'A':
+							cells[row][col] = new Cell(row, col, Type::FlgA);
+							FlgAPos.first = row;
+							FlgAPos.second = col;
+						break;
+						case 'T':
+							cells[row][col] = new Cell(row, col, Type::FR);
+						break;
+						case 'S':
+							cells[row][col] = new Cell(row, col, Type::SEA);
+						break;
+					}
+					UpdateBoardCounters(line[col]);
+				}
+			}
+			row++;
+		}
+		ValidateBoardCounters();
+		fstream.close();
+	}
+	else
+	{
+		Violations = Violations + "Error reading board file.\n";
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 bool Board::IsDeadArmy(Side _side)
 {
